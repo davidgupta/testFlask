@@ -7,6 +7,12 @@ api = Api(app)
 # Define an Resource, HelloAPI, below with get method and map it to URLs '/' and '/index/'
 # The get method should return a dictionary {'message': 'Hello World!!!'}
 
+class HelloAPI(Resource):
+  def get(self):
+    return {'message': 'Hello World!!!'}
+
+api.add_resource(HelloAPI, '/')
+api.add_resource(HelloAPI, '/index/')
 
 if __name__ == '__main__':
     app.run()
